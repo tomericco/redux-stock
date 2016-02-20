@@ -2,12 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addStock, fetchStocks } from '../actions'
 import StocksList from '../components/StocksList'
+import style from 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
-  componentDidMount() {
-
-  }
-
   handleAddStockInputChange(e) {
     this.setState({ inputSymbol: e.target.value })
   }

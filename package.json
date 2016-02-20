@@ -23,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
+    "bootstrap": "^3.3.6",
     "isomorphic-fetch": "^2.1.1",
     "lodash": "^4.3.0",
     "react": "^0.14.7",
@@ -43,6 +44,12 @@
     "node-libs-browser": "^0.5.2",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-hot-middleware": "^2.2.0",
+    "resolve-url-loader": "^1.4.3",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "less-loader": "^2.2.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5"
   }
 }

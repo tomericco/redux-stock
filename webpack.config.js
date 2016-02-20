@@ -19,31 +19,13 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loaders: ['babel'],
-        exclude: /node_modules/,
-        include: __dirname
-      }
+      { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/, include: __dirname },
+      { test: /\.css$/, loaders: [ 'style?sourceMap', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]' ]},
+      { test: /\.svg$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
+      { test: /\.woff$/, loader: 'file-loader' },
+      { test: /\.woff2$/, loader: 'file-loader' },
+      { test: /\.eot$/, loader: 'file-loader' },
+      { test: /\.ttf$/, loader: 'file-loader' }
     ]
   }
-}
-
-
-// When inside Redux repo, prefer src to compiled version.
-// You can safely delete these lines in your project.
-var reduxSrc = path.join(__dirname, '..', '..', 'src')
-var reduxNodeModules = path.join(__dirname, '..', '..', 'node_modules')
-var fs = require('fs')
-if (fs.existsSync(reduxSrc) && fs.existsSync(reduxNodeModules)) {
-  // Resolve Redux to source
-  module.exports.resolve = { alias: { 'redux': reduxSrc } }
-  // Our root .babelrc needs this flag for CommonJS output
-  process.env.BABEL_ENV = 'commonjs'
-  // Compile Redux from source
-  module.exports.module.loaders.push({
-    test: /\.js$/,
-    loaders: ['babel'],
-    include: reduxSrc
-  })
 }
