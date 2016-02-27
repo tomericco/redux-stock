@@ -2,19 +2,26 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addStock, fetchStocks } from '../actions'
 import StocksList from '../components/StocksList'
-import style from 'bootstrap/dist/css/bootstrap.css'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'css/App'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = getInitialState()
+  }
+
   handleAddStockInputChange(e) {
     this.setState({ inputSymbol: e.target.value })
   }
 
-  handleAddStockClick(e) {
+  handleAddStockClick() {
     var symbol = this.state.inputSymbol
 
-    if (symbol) {
+    if (symbol.length > 0) {
       this.props.dispatch(fetchStocks([symbol]))
-      this.setState({ inputSymbol: null })
+      this.setState({ inputSymbol: '' })
     }
   }
 
@@ -22,8 +29,8 @@ class App extends Component {
     const { myStocks } = this.props
 
     return (
-      <div>
-        <input type="text" onChange={this.handleAddStockInputChange.bind(this)} placeholder="Enter a symbol" />
+      <div className="appContainer">
+        <input type="text" value={this.state.inputSymbol} onChange={this.handleAddStockInputChange.bind(this)} placeholder="Enter a symbol" />
         <button onClick={this.handleAddStockClick.bind(this)}>+</button>
         <StocksList dispatch={this.props.dispatch} stocks={myStocks} />
       </div>
@@ -31,12 +38,18 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired
-}
-
 function mapStateToProps(state) {
   return state
+}
+
+function getInitialState() {
+  return {
+    inputSymbol: ''
+  }
+}
+
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps)(App)
