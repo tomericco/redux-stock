@@ -40,6 +40,11 @@ export function fetchStocks(symbols) {
           } else {
             console.error("Update stocks failed");
           }
+
+          _.remove(stocks, function (stock) {
+            return _.isNull(stock.Name)
+          })
+
           dispatch(receiveStocks(stocks))
         })
   }

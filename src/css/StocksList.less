@@ -1,0 +1,54 @@
+@stockItemHeight: 38px;
+
+.stocksList {
+    list-style-type: none;
+    padding: 10px;
+    color: #fff;
+
+    .listItem {
+        padding: 10px 0;
+        border-bottom: 1px solid #c6c6c6;
+        height: 55px;
+        line-height: 30px;
+        font-size: 24px;
+        font-weight: 100;
+
+        &:first-child {
+            border-top: 1px solid #c6c6c6;
+        }
+    }
+
+    .removeStock {
+        display: none;
+        float: right;
+        margin-left: 5px;
+        cursor: pointer;
+        line-height: @stockItemHeight;
+    }
+
+    .symbol {
+        float: left;
+        text-transform: uppercase;
+        line-height: @stockItemHeight;
+    }
+
+    .currentPrice {
+        margin: 0 5px;
+        float: right;
+        line-height: @stockItemHeight;
+    }
+
+    .change {
+        min-width: 96px;
+        font-weight: 200;
+        margin: 0 5px;
+        padding: 3px 5px;
+        border-radius: 3px;
+        float: right;
+        background-color: #1aff3a;
+
+        &.down {
+            background-color: #e8222e;
+        }
+    }
+}

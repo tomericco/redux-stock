@@ -29,9 +29,13 @@ class App extends Component {
     const { myStocks } = this.props
 
     return (
-      <div className="appContainer">
-        <input type="text" value={this.state.inputSymbol} onChange={this.handleAddStockInputChange.bind(this)} placeholder="Enter a symbol" />
-        <button onClick={this.handleAddStockClick.bind(this)}>+</button>
+      <div className="appContainer col-xs-12 col-md-3 text-center">
+        <input type="text" className="inputSymbol"
+               value={this.state.inputSymbol}
+               onChange={this.handleAddStockInputChange.bind(this)}
+               placeholder="Enter a symbol"
+               required="required" />
+        <span className="addBtn" onClick={this.handleAddStockClick.bind(this)}>+</span>
         <StocksList dispatch={this.props.dispatch} stocks={myStocks} />
       </div>
     )

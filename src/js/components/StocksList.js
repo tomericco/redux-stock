@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import Stock from './Stock'
 import { removeStock } from '../actions'
+import 'css/StocksList'
 
 export default class StocksList extends Component {
     handleRemoveStock(e) {
@@ -13,9 +14,9 @@ export default class StocksList extends Component {
         const stocks = this.props.stocks
 
         return (
-            <ul>
+            <ul className="stocksList">
                 {Object.keys(stocks).map((stock, i) =>
-                    <li key={i}>
+                    <li className="listItem" key={i}>
                         <Stock symbol={stocks[stock].symbol}
                                currentPrice={stocks[stock].currentPrice}
                                change={stocks[stock].change}
