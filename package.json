@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "description": "Personal stocks portfolio, built with React Redux",
   "scripts": {
-    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
-    "start": "node server.js",
-    "build": "webpack"
+    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
