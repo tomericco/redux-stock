@@ -7,22 +7,6 @@
     "build": "webpack"
   },
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rackt/redux.git"
-  },
-  "keywords": [
-    "react",
-    "reactjs",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack",
-    "flux"
-  ],
-  "license": "MIT",
   "dependencies": {
     "autoprefixer": "^6.3.3",
     "babel-core": "^6.3.15",
