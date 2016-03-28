@@ -1,11 +1,14 @@
 var webpack = require('webpack')
 var config = require('./webpack.config')
+var path = require('path')
+var express = require('express')
 
-var app = new (require('express'))()
+var app = new express()
 app.set('port', process.env.PORT || 3000)
 
 var compiler = webpack(config)
 var isProduction = process.env.NODE_ENV === 'production'
+var staticPath = path.join(__dirname, 'dist')
 
 if (!isProduction) {
   var webpackDevMiddleware = require('webpack-dev-middleware')
@@ -14,6 +17,7 @@ if (!isProduction) {
   app.use(webpackHotMiddleware(compiler))
 }
 
+app.use(express.static(staticPath))
 app.get("/", function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
