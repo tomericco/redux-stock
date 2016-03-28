@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Personal stocks portfolio, built with React Redux",
   "scripts": {
+    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
     "start": "node server.js",
     "build": "webpack"
   },
@@ -38,6 +39,7 @@
     "webpack": "^1.9.11"
   },
   "devDependencies": {
+    "babel-eslint": "^4.0.5",
     "expect": "^1.6.0",
     "node-libs-browser": "^0.5.2",
     "webpack-dev-middleware": "^1.2.0",
