@@ -6,6 +6,7 @@
     "start": "node server.js",
     "build": "webpack"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/rackt/redux.git"
