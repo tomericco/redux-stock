@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+require('heroku-self-ping')("https://restox.herokuapp.com/", { interval: 60 * 1000 })
+
 var webpack = require('webpack')
 var config = require('./webpack.config')
 var path = require('path')

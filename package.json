@@ -22,6 +22,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "foreman": "1.4.1",
+    "heroku-self-ping": "^1.1.2",
     "isomorphic-fetch": "^2.1.1",
     "less": "2.6.1",
     "less-loader": "^2.2.2",
